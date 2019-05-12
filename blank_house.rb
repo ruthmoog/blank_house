@@ -11,7 +11,10 @@ test_tweets = [
 banned_phrases = ["sucks", "bad", "hate", "foolish", "danger to society"]
 
 # tweet = "This president sucks"
-test_tweets.each do |phrase|
-  phrase.gsub!(/sucks/, "CENSORED")
+banned_phrases.each do |phrase|
+  pattern = Regexp.new phrase
+  test_tweets.each do |tweet|
+    tweet.gsub!(pattern, "CENSORED")
+  end
 end
 p test_tweets
