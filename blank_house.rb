@@ -10,6 +10,8 @@ test_tweets = [
 
 banned_phrases = ["sucks", "bad", "hate", "foolish", "danger to society"]
 
-test_tweets.each do |string|
-  string.split(" ")
+# tweet = "This president sucks"
+test_tweets.each do |phrase|
+  phrase.gsub!(/sucks/, "CENSORED")
 end
+p test_tweets
