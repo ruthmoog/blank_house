@@ -1,12 +1,15 @@
 CENSOR_WORD = "CENSORED"
 
-def censor_tweets(tweets, banned_phrases)
-
-  regexes = banned_phrases.map do |phrase|
-    Regexp.new(phrase, Regexp::IGNORECASE)
+class Censor
+  def initialize(banned_phrases)
+    @regexes = banned_phrases.map do |phrase|
+      Regexp.new(phrase, Regexp::IGNORECASE)
+    end
   end
 
-  tweets.each do |tweet|
-    regexes.each { |regex| tweet.gsub!(regex, CENSOR_WORD) }
+  def censor_tweets(tweets)
+    tweets.each do |tweet|
+      @regexes.each { |regex| tweet.gsub!(regex, CENSOR_WORD) }
+    end
   end
 end

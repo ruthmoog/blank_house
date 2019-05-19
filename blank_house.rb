@@ -9,6 +9,10 @@ test_tweets = [
   "President Presidentname is a danger to society. I hate that he's so bad – it sucks."
   ]
 
+tweets2 = ["president sucks"]
+
 banned_phrases = ["sucks", "bad", "hate", "foolish", "danger to society"]
 
-puts censor_tweets(test_tweets, banned_phrases)
+blank_house = Censor.new(banned_phrases)
+puts blank_house.censor_tweets(test_tweets)
+puts blank_house.censor_tweets(tweets2)

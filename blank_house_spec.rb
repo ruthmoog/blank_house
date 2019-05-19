@@ -1,9 +1,10 @@
 require "./censor_tweets.rb"
 
-describe "censor tweets" do
+describe "censor class" do
 
   banned_phrases = ["bad", "danger to society"]
-  
+  blank_house = Censor.new(banned_phrases)
+
   it "censors multiple phrases in multiple tweets" do
     tweets = [
       "President bad is a danger to society",
@@ -17,7 +18,7 @@ describe "censor tweets" do
       "The blank house is #{CENSOR_WORD}. Very #{CENSOR_WORD}."
     ]
 
-    expect(censor_tweets(tweets, banned_phrases)).to(eq(censored_tweets))
+    expect(blank_house.censor_tweets(tweets)).to(eq(censored_tweets))
   end
 
   it "censors regardless of letter case" do
@@ -25,6 +26,6 @@ describe "censor tweets" do
 
     censored_tweets = ["President #{CENSOR_WORD} is a #{CENSOR_WORD}!"]
 
-    expect(censor_tweets(mixed_case_tweets, banned_phrases)).to(eq(censored_tweets))
+    expect(blank_house.censor_tweets(mixed_case_tweets)).to(eq(censored_tweets))
   end
 end
