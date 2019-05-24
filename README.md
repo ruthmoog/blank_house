@@ -2,13 +2,15 @@
 
 This Ruby program censors specific words in an array of Strings.
 
-Use `ruby blank_house.rb` to run the program
-
 ## Objective
 
 > I'm a client working for the Blank House. We want to display positive tweets about our president on our website. However, our president is kind of unpopular, and we pretty much only receive negative press. Write me a program that filters out the following words from tweets: "sucks", "bad", "hate", "foolish", and the most popular: "danger to society". Replace each negative word or phrase them with the word "CENSORED". Some test tweets have been provided for you.
 
-## Contents
+## How to Run
+
+Use `ruby blank_house.rb` to run the program
+
+### Contents
 
 #### censor_tweets.rb
 
@@ -22,14 +24,13 @@ Ruby file containing the case specific data, including the tweets to be censored
 
 RSpec file with tests.
 
-
 ## Installation
 
 To run the tests, you'll need RSpec
 
 - Install RSpec with `gem install rspec` in the command line
 - Run `rspec --init` to get set up
-- Run tests with `rspec`
+- Run tests with `rspec blank_house_spec.rb`
 - Documentation: http://rspec.info/documentation/
 
 ## Contributing
